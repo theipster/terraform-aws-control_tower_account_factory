@@ -33,7 +33,7 @@ resource "aws_codepipeline" "aft_codecommit_customizations_codepipeline" {
       configuration = {
         RepositoryName       = data.aws_ssm_parameter.aft_global_customizations_repo_name.value
         BranchName           = data.aws_ssm_parameter.aft_global_customizations_repo_branch.value
-        PollForSourceChanges = false
+        PollForSourceChanges = true
       }
     }
 
@@ -48,7 +48,7 @@ resource "aws_codepipeline" "aft_codecommit_customizations_codepipeline" {
       configuration = {
         RepositoryName       = data.aws_ssm_parameter.aft_account_customizations_repo_name.value
         BranchName           = data.aws_ssm_parameter.aft_account_customizations_repo_branch.value
-        PollForSourceChanges = false
+        PollForSourceChanges = true
       }
     }
   }
